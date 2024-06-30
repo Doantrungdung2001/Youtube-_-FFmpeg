@@ -1,0 +1,1 @@
+ffmpeg -f lavfi -i anullsrc -rtsp_transport udp  -i rtsp://admin:Huy01102001@192.168.100.11:554/onvif2 -force_key_frames "expr:gte(t,n_forced*2)" -vf scale=1920:1080 -reorder_queue_size 4000 -max_delay 10000000 -vcodec libx264 -b:v 4500k -pix_fmt yuv420p -f flv rtmp://a.rtmp.youtube.com/live2/uf5d-uayu-4xuk-u5gc-dd15
